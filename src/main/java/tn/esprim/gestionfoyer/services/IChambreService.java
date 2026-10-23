@@ -6,7 +6,7 @@ import tn.esprim.gestionfoyer.entities.Chambre;
 import java.util.List;
 
 
-@Service
+
 public interface IChambreService {
     Chambre save (Chambre Chambre);
     public List<Chambre> retrieveAllChambres();
