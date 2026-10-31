@@ -22,8 +22,27 @@ public class Chambre implements Serializable {
     @OneToMany(cascade = CascadeType.ALL , fetch =FetchType.EAGER)
     private List<Reservation> reservations;
 
+    public Long getIdChambre() {
+        return idChambre;
+    }
 
+    public void setIdChambre(Long idChambre) {
+        this.idChambre = idChambre;
+    }
 
+    public Long getNumeroChampre() {
+        return numeroChampre;
+    }
 
+    public void setNumeroChampre(Long numeroChampre) {
+        this.numeroChampre = numeroChampre;
+    }
 
+    public TypeChambre getTypeC() {
+        return TypeC;
+    }
+
+    public void setTypeC(TypeChambre typeC) {
+        TypeC = typeC;
+    }
 }
