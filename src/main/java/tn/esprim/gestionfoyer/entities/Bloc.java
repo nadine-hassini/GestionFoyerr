@@ -15,7 +15,7 @@ import java.util.List;
 public class Bloc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idBloc;
+    private Long idBloc;
     private String nomBloc;
     private long capaciteBloc;
     @ManyToOne
