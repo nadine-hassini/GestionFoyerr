@@ -1,5 +1,6 @@
 package tn.esprim.gestionfoyer.services;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import tn.esprim.gestionfoyer.entities.Bloc;
 import tn.esprim.gestionfoyer.repositories.BlocRepository;
@@ -39,5 +40,11 @@ public class BlocServiceImpl implements IBlocService {
     @Override
     public Bloc modifyBloc(Bloc bloc) {
         return blocRepository.save(bloc);
+    }
+
+    @Override
+    public Bloc affecterChambresABloc(List<Long> numChambres, Long idBloc) {
+        Bloc bloc = blocRepository.findById(idBloc).orElseThrow(() -> new EntityNotFoundException("Bloc introuvable :" +idBloc));
+        return bloc;
     }
 }
