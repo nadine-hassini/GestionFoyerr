@@ -65,4 +65,21 @@ public class UniversiteServiceImpl implements IUniversiteService {
         foyer.setUniversite(universite);
         return universite;
     }
+    @Transactional
+    @Override
+    public Universite desaffecterFoyerUniversite(Long idUniversite) {
+        Universite universite = universiteRepository.findById(idUniversite)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        "Université introuvable avec l'id : " + idUniversite));
+
+        if (universite.getFoyer() == null) {
+            throw new IllegalStateException(
+                    "Aucun foyer n'est actuellement associé à l'université : " + idUniversite);
+        }
+
+        Foyer foyer = universite.getFoyer();
+        foyer.setUniversite(null);
+        universite.setFoyer(null);
+        return universite;
+    }
 }
