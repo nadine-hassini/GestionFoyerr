@@ -39,7 +39,7 @@ public class FoyerRestController {
         return foyerService.modifyFoyer(f);
     }
 
-    @PutMapping("/affecter-foyer/{foyer-id}/{universite-id}")
+    @PostMapping("/affecter-foyer/{foyer-id}/{universite-id}")
     public Foyer affecterFoyerAUniversite(@PathVariable("foyer-id") Long idFoyer,
                                           @PathVariable("universite-id") Long idUniversite) {
         return foyerService.affecterFoyerAUniversite(idFoyer, idUniversite);

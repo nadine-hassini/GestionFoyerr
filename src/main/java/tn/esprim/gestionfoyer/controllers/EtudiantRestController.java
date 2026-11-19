@@ -39,7 +39,7 @@ public class EtudiantRestController {
         return etudiantService.modifyEtudiant(e);
     }
 
-    @PutMapping("/affecter-reservation/{etudiant-id}/{reservation-id}")
+    @PostMapping("/affecter-reservation/{etudiant-id}/{reservation-id}")
     public Etudiant affecterEtudiantAReservation(@PathVariable("etudiant-id") Long idEtudiant,
                                                  @PathVariable("reservation-id") Long idReservation) {
         return etudiantService.affecterEtudiantAReservation(idEtudiant, idReservation);

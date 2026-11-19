@@ -43,7 +43,7 @@ public class BlocRestController {
         return bloc;
     }
 
-    @PutMapping("/affecter-chambres/{bloc-id}")
+    @PostMapping("/affecter-chambres/{bloc-id}")
     public Bloc affecterChambres(@RequestBody List<Long> numChambres,
                                  @PathVariable("bloc-id") Long idBloc) {
         return blocService.affecterChambresABloc(numChambres, idBloc);
