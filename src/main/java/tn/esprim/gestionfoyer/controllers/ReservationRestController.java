@@ -38,4 +38,16 @@ public class ReservationRestController {
     public Reservation modifyReservation(@RequestBody Reservation r) {
         return reservationService.modifyReservation(r);
     }
+
+    @PutMapping("/affecter-reservation/{reservation-id}/{chambre-id}")
+    public Reservation affecterReservationAChambre(@PathVariable("reservation-id") Long idReservation,
+                                                   @PathVariable("chambre-id") Long idChambre) {
+        return reservationService.affecterReservationAChambre(idReservation, idChambre);
+    }
+
+    @PutMapping("/desaffecter-reservation/{reservation-id}/{chambre-id}")
+    public Reservation desaffecterReservationDeChambre(@PathVariable("reservation-id") Long idReservation,
+                                                       @PathVariable("chambre-id") Long idChambre) {
+        return reservationService.desaffecterReservationDeChambre(idReservation, idChambre);
+    }
 }

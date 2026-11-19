@@ -10,4 +10,7 @@ public interface IEtudiantService {
     Etudiant addEtudiant(Etudiant e);
     void removeEtudiant(Long etudiantId);
     Etudiant modifyEtudiant(Etudiant e);
+    Etudiant affecterEtudiantAReservation(Long idEtudiant, Long idReservation);
+    Etudiant desaffecterEtudiantDeReservation(Long idEtudiant, Long idReservation);
+
 }

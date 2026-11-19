@@ -10,4 +10,6 @@ public interface IReservationService {
     Reservation addReservation(Reservation r);
     void removeReservation(Long reservationId);
     Reservation modifyReservation(Reservation r);
+    Reservation affecterReservationAChambre(Long idReservation, Long idChambre);
+    Reservation desaffecterReservationDeChambre(Long idReservation, Long idChambre);
 }

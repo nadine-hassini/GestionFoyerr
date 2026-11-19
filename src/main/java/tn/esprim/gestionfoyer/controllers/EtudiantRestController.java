@@ -38,4 +38,16 @@ public class EtudiantRestController {
     public Etudiant modifyEtudiant(@RequestBody Etudiant e) {
         return etudiantService.modifyEtudiant(e);
     }
+
+    @PutMapping("/affecter-reservation/{etudiant-id}/{reservation-id}")
+    public Etudiant affecterEtudiantAReservation(@PathVariable("etudiant-id") Long idEtudiant,
+                                                 @PathVariable("reservation-id") Long idReservation) {
+        return etudiantService.affecterEtudiantAReservation(idEtudiant, idReservation);
+    }
+
+    @PutMapping("/desaffecter-reservation/{etudiant-id}/{reservation-id}")
+    public Etudiant desaffecterEtudiantDeReservation(@PathVariable("etudiant-id") Long idEtudiant,
+                                                     @PathVariable("reservation-id") Long idReservation) {
+        return etudiantService.desaffecterEtudiantDeReservation(idEtudiant, idReservation);
+    }
 }

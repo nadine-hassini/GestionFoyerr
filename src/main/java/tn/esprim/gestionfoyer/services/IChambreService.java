@@ -14,4 +14,6 @@ public interface IChambreService {
     public Chambre addChambre(Chambre c);
     public void removeChambre(Long chambreId);
     public Chambre modifyChambre(Chambre chambre);
+    Chambre affecterChambreABloc(Long idChambre, Long idBloc);
+    Chambre desaffecterChambreDeBloc(Long idChambre);
 }

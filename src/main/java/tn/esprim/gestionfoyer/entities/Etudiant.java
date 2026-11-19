@@ -3,11 +3,7 @@ package tn.esprim.gestionfoyer.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,13 +13,15 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Etudiant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEtudiant;
+    private Long idEtudiant;
     private String nomEt;
     private String prenomEt;
-    private long cin;
+    private Long cin;
     private String ecole;
 
     @JsonFormat(pattern = "yyyy-MM-dd")

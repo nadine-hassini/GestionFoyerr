@@ -38,4 +38,16 @@ public class FoyerRestController {
     public Foyer modifyFoyer(@RequestBody Foyer f) {
         return foyerService.modifyFoyer(f);
     }
+
+    @PutMapping("/affecter-foyer/{foyer-id}/{universite-id}")
+    public Foyer affecterFoyerAUniversite(@PathVariable("foyer-id") Long idFoyer,
+                                          @PathVariable("universite-id") Long idUniversite) {
+        return foyerService.affecterFoyerAUniversite(idFoyer, idUniversite);
+    }
+
+    @PutMapping("/desaffecter-foyer/{foyer-id}/{universite-id}")
+    public Foyer desaffecterFoyerDeUniversite(@PathVariable("foyer-id") Long idFoyer,
+                                              @PathVariable("universite-id") Long idUniversite) {
+        return foyerService.desaffecterFoyerDeUniversite(idFoyer, idUniversite);
+    }
 }

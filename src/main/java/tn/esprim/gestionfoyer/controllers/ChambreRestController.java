@@ -46,4 +46,14 @@ public class ChambreRestController {
         Chambre chambre = chambreService.modifyChambre(c);
         return chambre;
     }
+    @PutMapping("/affecter-bloc/{chambre-id}/{bloc-id}")
+    public Chambre affecterChambreABloc(@PathVariable("chambre-id") Long idChambre,
+                                        @PathVariable("bloc-id") Long idBloc) {
+        return chambreService.affecterChambreABloc(idChambre, idBloc);
+    }
+
+    @PutMapping("/desaffecter-bloc/{chambre-id}")
+    public Chambre desaffecterChambreDeBloc(@PathVariable("chambre-id") Long idChambre) {
+        return chambreService.desaffecterChambreDeBloc(idChambre);
+    }
 }

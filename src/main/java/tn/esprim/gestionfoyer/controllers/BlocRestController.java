@@ -42,4 +42,16 @@ public class BlocRestController {
         Bloc bloc = blocService.modifyBloc(b);
         return bloc;
     }
+
+    @PutMapping("/affecter-chambres/{bloc-id}")
+    public Bloc affecterChambres(@RequestBody List<Long> numChambres,
+                                 @PathVariable("bloc-id") Long idBloc) {
+        return blocService.affecterChambresABloc(numChambres, idBloc);
+    }
+
+    @PutMapping("/desaffecter-chambres/{bloc-id}")
+    public Bloc desaffecterChambres(@RequestBody List<Long> numChambres,
+                                    @PathVariable("bloc-id") Long idBloc) {
+        return blocService.desaffecterChambresDeBloc(numChambres, idBloc);
+    }
 }
